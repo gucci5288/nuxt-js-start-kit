@@ -4,6 +4,11 @@
       <nuxt-link to="/todos">
         TODOS
       </nuxt-link>
+
+      <nuxt-link to="/books/ex5487">
+        Books
+      </nuxt-link>
+
       <h1 class="title">
         nuxt-js-start-kit
       </h1>
