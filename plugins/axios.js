@@ -3,8 +3,8 @@ export default function ({
   redirect
 }) {
   $axios.onRequest((config) => {
-    const APIToken = process.env.YELP_API_KEY
-    config.headers.common.Authorization = `Bearer ${APIToken}`
+    // const APIToken = process.env.YELP_API_KEY
+    // config.headers.common.Authorization = `Bearer ${APIToken}`
   })
   $axios.onError((error) => {
     // eslint-disable-next-line no-console

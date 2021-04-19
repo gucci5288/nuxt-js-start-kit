@@ -6,7 +6,8 @@
     <div v-for="(post, postIdx) in posts" :key="postIdx">
       {{ post }}
     </div>
-
+    <div>{{ res }}</div>
+    <div>restaurant:</div>
     <div>{{ restaurant }}</div>
   </div>
 </template>
@@ -14,12 +15,22 @@
 <script>
 export default {
   // eslint-disable-next-line require-await
-  async asyncData ({ params }) {
+  async asyncData ({
+    params,
+    $apiYelp
+  }) {
     // eslint-disable-next-line no-console
     console.log('asyncData hook')
+    const restaurant = await $apiYelp.$get('/restaurant/businesses/WavvLdfdP6g8aZTtbBQHTw')
+      .then(res => res).catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log(error)
+      })
+
     const slug = params.slug
     const book = params.book
     return {
+      restaurant,
       slug,
       book
     }
@@ -27,22 +38,23 @@ export default {
   data () {
     return {
       posts: [],
-      restaurant: {}
+      // food: {},
+      res: null
     }
   },
   // eslint-disable-next-line require-await
   async fetch ({ $axios }) {
     // eslint-disable-next-line no-console
     console.log('fetch hook')
-    this.restaurant = await $axios.$get('/restaurant/businesses/WavvLdfdP6g8aZTtbBQHTw')
-      .then((res) => {
-        // eslint-disable-next-line no-console
-        console.log('res', res)
-        return res.json()
-      }).catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error)
-      })
+    // this.res = await $axios.$get('/food/businesses/WavvLdfdP6g8aZTtbBQHTw')
+    //   .then((res) => {
+    //     console.log('food res=>', res)
+    //     this.food = res
+    //     return res
+    //   }).catch((error) => {
+    //     // eslint-disable-next-line no-console
+    //     console.log(error)
+    //   })
   }
 }
 </script>
