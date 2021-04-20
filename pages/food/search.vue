@@ -16,11 +16,13 @@
         placeholder="Search products..."
       >
       <button class="pr-2" @click="onClickSearch">
-        <img class="h-6 w-6" src="~assets/search.svg?inline" />
+        <img class="h-6 w-6" src="~assets/search.svg?inline" alt="search" >
       </button>
     </div>
 
-    <div class="m-4">Popular</div>
+    <div class="m-4">
+      Popular
+    </div>
     <div class="flex w-full overflow-x-scroll overflow-x-hidden">
       <business-data
         v-for="(business, idx) in businesses"
@@ -42,12 +44,6 @@
 <script>
 export default {
   name: 'Search',
-  data () {
-    return {
-      location: 'taipei',
-      term: ''
-    }
-  },
   async asyncData ({
     params,
     $apiYelp
@@ -78,6 +74,12 @@ export default {
       results,
       businesses,
       categories
+    }
+  },
+  data () {
+    return {
+      location: 'taipei',
+      term: ''
     }
   },
   methods: {

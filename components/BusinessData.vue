@@ -5,15 +5,23 @@
       :style="{ backgroundImage:`url(${business.image_url})` }"
     >
       <div class="ml-auto mr-2 mt-2">
-        <img class="h-4 w-4 text-white" src="~/assets/like.svg"/>
+        <img class="h-4 w-4" src="~/assets/like.svg" alt="like">
       </div>
     </div>
-    <div class="mt-2 text-sm text-gray-800 font-bold">{{ business.alias }}</div>
-    <div class="text-xs text-gray-500">{{ business.name }}</div>
+    <div class="mt-2 text-sm text-gray-800 font-bold">
+      {{ business.alias }}
+    </div>
+    <div class="text-xs text-gray-500">
+      {{ business.name }}
+    </div>
 
     <div class="flex">
-      <div class="text-xs text-yellow-400">Rating : {{ business.rating }}</div>
-      <div class="ml-2 text-xs text-green-800">Price : {{ business.price || 'Free' }}</div>
+      <div class="text-xs text-yellow-400">
+        Rating : {{ business.rating }}
+      </div>
+      <div v-if="business.price" class="ml-2 text-xs text-green-800">
+        Price : {{ business.price }}
+      </div>
     </div>
 
     <div class="flex flex-wrap">
