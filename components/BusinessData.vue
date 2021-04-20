@@ -4,8 +4,8 @@
       class="h-36 w-56 shadow bg-cover bg-center rounded-lg flex"
       :style="{ backgroundImage:`url(${business.image_url})` }"
     >
-      <div class="ml-auto mr-2 text-white shadow-inner">
-        heart
+      <div class="ml-auto mr-2 mt-2">
+        <img class="h-4 w-4 text-white" src="~/assets/like.svg"/>
       </div>
     </div>
     <div class="mt-2 text-sm text-gray-800 font-bold">{{ business.alias }}</div>
@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: 'businessData',
+  name: 'BusinessData',
   props: {
     business: {
       type: Object,

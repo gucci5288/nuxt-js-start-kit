@@ -15,19 +15,26 @@
         class="p-2 text-gray-800 rounded-lg bg-gray-200"
         placeholder="Search products..."
       >
-      <button class="pr-4" @click="onClickSearch">
-        Search
+      <button class="pr-2" @click="onClickSearch">
+        <img class="h-6 w-6" src="~assets/search.svg?inline" />
       </button>
     </div>
 
     <div class="m-4">Popular</div>
     <div class="flex w-full overflow-x-scroll overflow-x-hidden">
-      <restaurant-data
+      <business-data
         v-for="(business, idx) in businesses"
         :key="business.id"
         :business="business"
         :is-last="idx === businesses.length -1"
       />
+    </div>
+
+    <div class="p-4 text-gray-300">
+      Icons made by
+      <a href="https://www.freepik.com" title="Freepik">Freepik</a>
+      from
+      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
     </div>
   </div>
 </template>
