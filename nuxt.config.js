@@ -64,9 +64,9 @@ export default {
   },
 
   proxy: {
-    '/restaurant/': {
+    '/yelp/': {
       target: 'https://api.yelp.com/v3/',
-      pathRewrite: { '^/restaurant/': '' }
+      pathRewrite: { '^/yelp/': '' }
     }
   },
 
