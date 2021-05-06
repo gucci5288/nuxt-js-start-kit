@@ -38,7 +38,7 @@ export default {
   data () {
     return {
       posts: [],
-      // food: {},
+      // business: {},
       res: null
     }
   },
@@ -46,10 +46,10 @@ export default {
   async fetch ({ $axios }) {
     // eslint-disable-next-line no-console
     console.log('fetch hook')
-    // this.res = await $axios.$get('/food/businesses/WavvLdfdP6g8aZTtbBQHTw')
+    // this.res = await $axios.$get('/business/businesses/WavvLdfdP6g8aZTtbBQHTw')
     //   .then((res) => {
-    //     console.log('food res=>', res)
-    //     this.food = res
+    //     console.log('business res=>', res)
+    //     this.business = res
     //     return res
     //   }).catch((error) => {
     //     // eslint-disable-next-line no-console

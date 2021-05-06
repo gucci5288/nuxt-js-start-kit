@@ -16,7 +16,7 @@
         placeholder="Search products..."
       >
       <button class="pr-2" @click="onClickSearch">
-        <img class="h-6 w-6" src="~assets/search.svg?inline" alt="search" >
+        <img class="h-6 w-6" src="~assets/search.svg?inline" alt="search">
       </button>
     </div>
 

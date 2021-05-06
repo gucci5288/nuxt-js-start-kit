@@ -1,6 +1,10 @@
 <template>
   <div class="container">
     <div>
+      <nuxt-link to="/business/search">
+        Business search
+      </nuxt-link>
+
       <nuxt-link to="/todos">
         TODOS
       </nuxt-link>
@@ -8,28 +12,6 @@
       <nuxt-link to="/books/ex5487">
         Books
       </nuxt-link>
-
-      <h1 class="title">
-        nuxt-js-start-kit
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
     </div>
   </div>
 </template>
